@@ -23,28 +23,26 @@
 		
 		<?php 
 		
-		// si se produjo error ... 
-		if ($codigo=$_FILES['fichero']['error'])
-		    throw new Exception('ERROR, con código: '.$codigo);
+		//para cada entrada de $_FILE ....
+		foreach($_FILES as $fichero){
 		    
-		// recupera la ruta que se le asigna al fichero en la carpeta temporal
-		$rutaTemporal= $_FILES['fichero']['tmp_name'];
-		
-		// recupera el nombre original del fichero
-		$nombreFichero= $_FILES['fichero']['name'];
-		
-		// esta será la ruta final donde ubicaremos el archivo, debe ser accesible
-		$rutaFinal= "imagenes/$nombreFichero";
-		
-		//mueve el fichero de la ruta temporal a la ruta final
-		if(!move_uploaded_file($rutaTemporal, $rutaFinal))
-		    throw new Exception('Error al mover el fichero');
+		    //si no hay error ...
+		    if(!$error = $fichero['error']){
+		        
+		        $nombreFichero = $fichero['name'];     //nombre del fichero
+		        $rutaTemporal = $fichero['tmp_name'];  //ruta temporal
+		        $rutaFinal = "files/$nombreFichero";   //ruta final
+		        
+		        //mueve el fichero de la ruta temporal a la ruta final
+		        echo move_uploaded_file($rutaTemporal, $rutaFinal) ? 
+		          "<p>Fichero $nombreFichero movido correctamente.</p>":
+		          "<p>Error al mover el fichero $nombreFichero.</p>";
 		    
-	   //si todo fué bien ...
-		echo 'El fichero se movió correctamente'; 
-		
-		
-		
+		    //si hay error
+		    }else 
+		        echo "<p>ERROR con codigo $error.</p>·";
+            }
+
 		?>
 		
 		</pre>

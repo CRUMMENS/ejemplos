@@ -6,7 +6,7 @@
 	
     	<meta charset = "UTF-8">
     	
-    	<title> File upload - Ejemplo con previsualización </title>
+    	<title> PHP17 - subida multiple parcial</title>
     	
     	<link rel = "stylesheet" type="text/css"  
     	href="http://robertsallent.com/css/generic.css">
@@ -16,29 +16,27 @@
 	
 	<body>
 	
+		<h1>Subida múltiple de ficheros</h1>
+		<p>Si alguno falla no se sube , pero el resto si.</p>
+		
 		<form method = "POST" enctype = "multipart/form-data" action = "upload.php">
 		
-			<label> Sube tres ficheros: </label>
+			<label> Sube las fotos del producto: </label>
 			<br>
 			
-			<input type="hidden" name="MAX_FILE_SIZE" value="500000">
-			<input type="file" name="fichero1">
+			<input type="file" accept="image/*" name="fichero1">
 			<br>
 			
-			<input type="hidden" name="MAX_FILE_SIZE" value="700000">
-			<input type="file" name="fichero2">
+			<input type="file" accept="image/*" name="fichero2">
 			<br>
 			
-			<input type="hidden" name="MAX_FILE_SIZE" value="100000">
-			<input type="file" name="fichero3">
+			<input type="file" accept="image/*" name="fichero3">
 			<br>
 			
 			<input type="submit" value="Enviar">
 		
 		</form>
-		
-		
-	
+
 	</body>
 
 </html>
