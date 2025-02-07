@@ -9,7 +9,7 @@
  *
  * @author Robert Sallent
  * 
- * @since v1.7.4 añadido el método estático getFiles()
+ * @since v1.7.4 añadido el método getFiles() y el método estático files().
  *
  */
    
