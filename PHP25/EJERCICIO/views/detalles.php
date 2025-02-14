@@ -1,29 +1,43 @@
-<?php
-// Asegúrate de incluir la configuración y la conexión a la base de datos
-require_once '../scripts/conectar.php'; // Conexión a la base de datos
-require_once '../scripts/recuperarLibro.php';  // Recibe el libro
+<!DOCTYPE html>
+<html lang = "es">
 
-// Si el libro ha sido recuperado correctamente, lo mostramos
-if (isset($libro)) {
-    ?>
-    <h1>Detalles del libro</h1>
-    <p>ISBN:<?php echo $libro->isbn; ?></p>
-    <p>Titulo:<?php echo $libro->titulo; ?></p>
-    <p>Editorial:<?php echo $libro->editorial; ?></p>
-    <p>Idioma:<?php echo $libro->idioma; ?></p>
-    <p>Autor:<?php echo $libro->autor; ?></p>
-    <p>Edicion:<?php echo $libro->edicion; ?></p>
-    <p>Año:<?php echo $libro->anyo; ?></p>
-    <p>Edad recomendada: <?php echo $libro->edadrecomendada; ?></p>
-    <p>Portada: <?php echo $libro->portada; ?></p>
-    <p>Características: <?php echo $libro->caracteristicas; ?></p>
-    <p>Sinopsis: <?php echo $libro->sinopsis; ?></p>
-    <p>Paginas: <?php echo $libro->paginas; ?></p>
-    
+	<head>
+	
+    	<meta charset = "UTF-8">
+    	<title> Lista de libros </title>
+    	
+    	<link re l = "stylesheet" type = "text/css"
+    		  href = "https://robertsallent.com/css/generic.css">
+		  
+	</head>
+	
+	<body>
 
-    <a href="listado.php">Volver al listado de libros</a>
-    <?php
-} else {
-    echo "<p>El libro solicitado no existe.</p>";
-}
-?>
+        
+        <h1> Detalles del libro <?= $libro->titulo ?></h1>
+        
+        <?php
+        
+            echo "<p>ISBN:   		<b>$libro->isbn</b></p>";
+        	echo "<p>Título: 		<b>$libro->titulo</b></p>";
+        	echo "<p>Editorial:		<b>$libro->editorial</b></p>";
+        	echo "<p>Idioma: 		<b>$libro->idioma</b></p>";
+        	echo "<p>Autor: 		<b>$libro->autor</b></p>";
+        	echo "<p>Edicion:   	<b>$libro->edicion</b></p>";
+        	echo "<p>Año:   		<b>$libro->anyo</b></p>";
+        	echo "<p>Edad: 			<b>$libro->edadrecomendada</b></p>";
+        	echo "<p>Portada: 		<b>$libro->portada</b></p>";
+        	echo "<p>Características:<b>$libro->caracteristicas</b></p>";
+        	echo "<p>Sinopsis:   	<b>$libro->sinopsis</b></p>";
+        	echo "<p>Paginas:   	<b>$libro->paginas</b></p>";
+            
+        ?>
+        
+        
+        <div class="centrado" >
+            <a href="listar.php" class="button"> Volver al listado de libros </a>
+        </div> 
+   	
+	</body>
+
+</html>

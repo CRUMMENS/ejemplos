@@ -10,7 +10,7 @@ include 'libraries/autoload.php';
 
 //ejecuta los scripts de conectar y recuperar libros 
 include 'scripts/conectar.php';
-include 'scripts/recuperarLibros.php';
+include 'scripts/recuperarLibro.php';
 
 //carga la vista de listado 
 include 'views/booklist.php';
@@ -18,4 +18,3 @@ include 'views/booklist.php';
 //carga la vista de la tabla
 include  'views/booktable.php';
 
-?>

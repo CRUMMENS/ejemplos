@@ -1,6 +1,9 @@
+#[\AllowDynamicProperties()
+
 <?php
 
 //clase Libro
+  
 class Libro {
     
     //NO se indica las PROPIEDADES , las creará dinámicamente ..
@@ -14,5 +17,3 @@ class Libro {
         return "$this->titulo , de $this->autor. Editorial $this->editorial.";
     }
 }
-
-?>
