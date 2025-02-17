@@ -11,25 +11,32 @@
  */
 class Email{
     
-    /** @var $date fecha actual */
+    /*
+    * @var $date fecha actual */
     public string $date; 
     
-    /** @var $to destinatario del email */
+    /*
+    * @var $to destinatario del email */
     public string $to;
     
-    /** @var $from remitente del email */
+    /*
+    * @var $from remitente del email */
     public string $from;
     
-    /** @var $name nombre del remitente */
+    /*
+    * @var $name nombre del remitente */
     public string $name;
     
-    /** @var $subject asunto del mensaje */
+    /*
+    * @var $subject asunto del mensaje */
     public string $subject;
     
-    /** @var $message cuerpo del mensaje */
+    /*
+    * @var $message cuerpo del mensaje */
     public string $message;
     
-    /** @var $headers cabeceras adicionales */
+    /*
+    * @var $headers cabeceras adicionales */
     public string $headers;
     
     /**
