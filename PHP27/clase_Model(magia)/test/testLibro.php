@@ -166,15 +166,14 @@ opcionales , pero lo normal es indicar al menos campo y valor . </p>
 
 <p>Se aplica sobre el objeto de tipo Libro que queremos guardar en la BDD. </p>
 
-<p> ERROR : FALTA ARREGLAR EL CODIGO!!!! </p>	
 
 <?php
     
-    /*
+    
     $libro = new Libro(); //crea un nuevo objeto Libro
     
     //pone los valores a las propiedades (vendrían de un formulario)
-    $libro->isbn                = '978-84-339-7123-4';
+    $libro->isbn                = uniqid();
     $libro->titulo              = 'A sangre fria'    ;
     $libro->editorial           = 'Anagrama'         ;
     $libro->idioma              = 'Castellano'       ;
@@ -192,7 +191,7 @@ opcionales , pero lo normal es indicar al menos campo y valor . </p>
     
     //recupera el libro desde la BDD para ver si realmente se guardó
     echo Libro::find($libro->id);
-    */
+    
 ?>
 
 
@@ -250,12 +249,11 @@ o el método estático <code>delete()</code> .</p>
 <h2>Guarda un libro (forma alternativa)</h2>
 <p>Usamos el método de objeto <code>create()</code>.</p>
 
-<p> ERROR : FALTA ARREGLAR EL CODIGO!!!! </p>	
 
 <?php
-/*
+
     $id = Libro::create([
-        'ibn'           => '99-949-44-994-9-94'  ,   //$_POST['isbn']
+        'isbn'           => uniqid()              ,  //$_POST['isbn']
         'titulo'        => 'El problema final'   ,
         'editorial'     => 'Planeta'             , 
         'autor'         => 'Arturo Pérez-Reverte',
@@ -272,8 +270,36 @@ o el método estático <code>delete()</code> .</p>
     
     //comprobamos si extiste el libro o no 
     echo "<p>".(Libro::find($id) ?? 'NO EXISTE')."</p>";
-*/
+
 ?>
 
 
+<!----------------------------- total() ------------------------------>
+<h2>Realiza calculos de totales</h2>
+<p>Usamos el método estático <code>total()</code>.</p>
 
+
+<?php
+
+    echo "<p>Total de libros : ".Libro::total()."</br></p>";
+    echo "<p>MIN edicion : ".Libro::total('MIN','edicion')."</br></p>";
+    echo "<p>MAX edicion : ".Libro::total('MAX','edicion')."</br></p>";
+    echo "<p>AVG edicion : ".Libro::total('AVG','edicion')."</br></p>";
+
+?>
+
+
+<!----------------------------- groupBy() ------------------------------>
+<h2>Realiza cálculos de totales con grupos sobre una única tabla</h2>
+<p>Usamos el método estático <code>groupBy()</code>.</p>
+
+<ul>
+<?php
+
+    $resultado = Libro::groupBy(['id'=>'COUNT'],['editorial']);
+    
+    foreach ($resultado as $r)
+        echo "<li>$r->editorial : <b>$r->idcount</b></li>";
+
+?>
+</ul>
