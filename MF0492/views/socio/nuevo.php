@@ -11,45 +11,34 @@
 	
 	<body>
 	
-    	<form method="POST" action="index.php?controlador=libro/store">
+    	<form method="POST" action="index.php?controlador=socio/store">
         	
-        		<label>ISBN</label>
-        		<input type="text" name="isbn">
+        		<label>Nombre:</label>
+        		<input type="text" name="nombre">
         		<br>
         		
-        		<label>Titulo</label>
-        		<input type="text" name="titulo">
+        		<label>Apellidos:</label>
+        		<input type="text" name="apellidos">
         		<br>
         		
-        		<label>Editorial</label>
-        		<input type="text" name="editorial">
+
+        		<label>Teléfono:</label>
+        		<input type="number" name="telefono">
         		<br>
         		
-        		<label>Autor</label>
-        		<input type="text" name="autor">
+        		<label>Email:</label>
+        		<input type="email"  name="email">
         		<br>
         		
-        		<label>Idioma</label>
-        		<select name="idioma">
-        			<option value="Castellano">Castellano</option>
-        			<option value="Catalán">Catalán</option>
-        			<option value="Otros">Otros</option>
-        		</select>
-        		<br>
-        		
-        		<label>Edición</label>
-        		<input type="number" min="0" name="edicion">
-        		<br>
-        		
-        		<label>Edad</label>
-        		<input type="number" min="0" max="99" name="edadrecomendada">
+        		<label>Población:</label>
+        		<input type="text" name="población">
         		<br>
         		
         		<input type="submit" class="button" name="guardar" value="Guardar">
         	</form>
     	
     	<div class="centrado">
-    		<a class="button" href="index.php?controlador=libro/list">Lista de libros</a>
+    		<a class="button" href="index.php?controlador=socio/list">Lista de socios</a>
     	</div>
 		
 				

@@ -3,7 +3,7 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<title>Error</title>
+		<title>Lista socios</title>
 		<link rel  ="stylesheet" type= "text/css"
 			  href = "https://robertsallent.com/css/generic.css">
 	</head>
@@ -11,35 +11,35 @@
 	
 	<body>
 	
-		<h1>Libros de la biblioteca</h1>
+		<h1>Socios de la biblioteca</h1>
 		
-		<menu>
+		<menu class="menu">
 			<li><a href = "index.php">Inicio</a>
-			<li><a href = "index.php?controlador=libro/list" class="activo">
-				Lista de libros</a></li>
-			<li><a href = "index.php?controlador=libro/create">
-				Nuevo libro</a></li>
+			<li><a href = "index.php?controlador=socio/list" class="activo">
+				Lista de socios</a></li>
+			<li><a href = "index.php?controlador=socio/create">
+				Nuevo socio</a></li>
 		</menu>
 		
 		
-		<h2>Lista de libros</h2>
+		<h2>Lista de socios</h2>
 		
 			
 			
 
-		<form method="POST" class="search" action="index.php?controlador=libro/search">
+		<form method="POST" class="search" action="index.php?controlador=socio/search">
 		
 			<label>Campo:</label>
 			<select name="campo">
-				<option value="titulo"
-						<?= !empty($campo) && $campo == 'titulo' ? 'selected' : '' ?>
-						>Titulo</opcion>
-				<option value="editorial"
-						<?= !empty($campo) && $campo == 'editorial' ? 'selected' : '' ?>
-						>Editorial</opcion>	
-				<option value="autor"
-						<?= !empty($campo) && $campo == 'autor' ? 'selected' : '' ?>
-						>Autor</opcion>	
+				<option value="nombre"
+						<?= !empty($campo) && $campo == 'nombre' ? 'selected' : '' ?>
+						>Nombre</opcion>
+				<option value="apellidos"
+						<?= !empty($campo) && $campo == 'apellidos' ? 'selected' : '' ?>
+						>Apellidos</opcion>	
+				<option value="poblacion"
+						<?= !empty($campo) && $campo == 'poblacion' ? 'selected' : '' ?>
+						>Poblacion</opcion>	
 			</select>
 			
 			
@@ -49,15 +49,15 @@
 			
 			<label>Orden:</label>
 			<select name="orden">
-				<option value ="titulo"
-				<?= !empty($orden) && $orden == 'titulo' ? 'selected' : '' ?>
-						>Titulo</opcion>
-				<option value ="editorial"
-				<?= !empty($orden) && $orden == 'editorial' ? 'selected' : '' ?>
-						>Editorial</opcion>
-				<option value ="autor"
-				<?= !empty($orden) && $orden == 'autor' ? 'selected' : '' ?>
-						>Autor</opcion>
+				<option value ="nombre"
+				<?= !empty($orden) && $orden == 'nombre' ? 'selected' : '' ?>
+						>Nombre</opcion>
+				<option value ="apellidos"
+				<?= !empty($orden) && $orden == 'apellidos' ? 'selected' : '' ?>
+						>Apellidos</opcion>
+				<option value ="poblacion"
+				<?= !empty($orden) && $orden == 'poblacion' ? 'selected' : '' ?>
+						>Poblacion</opcion>
 			</select>
 			
 			<input type="radio" name="sentido" value="ASC"
@@ -70,7 +70,7 @@
 				
 			<input type="submit" class="button" name="filtro" value="Filtrar">
 			
-			<a class="button" href="index.php?controlador=libro/list">Quitar filtros</a>
+			<a class="button" href="index.php?controlador=socio/list">Quitar filtros</a>
 	
 		</form>
 		
@@ -79,24 +79,24 @@
 		<table class="bloqueCentrado w100">
 		
 			<tr>
-				<th>Título</th> 
-				<th>Autor</th>
-				<th>Editorial</th>
+				<th>Nombre</th> 
+				<th>Apellidos</th>
+				<th>Poblacion</th>
 				<th>Operaciones</th>
 			</tr>
 		
-    		<?php foreach ($libros as $libro){ ?>
+    		<?php foreach ($socios as $socio){ ?>
     		
     		<tr>
-    			<td> <?= $libro->titulo?> </td>
-    			<td> <?= $libro->autor?> </td>
-    			<td> <?= $libro->editorial?> </td>
+    			<td> <?= $socio->nombre?> </td>
+    			<td> <?= $socio->apellidos?> </td>
+    			<td> <?= $socio->poblacion?> </td>
     			<td>
-    				<a href='index.php?controlador=libro/show&id=<?= $libro->id?>' 
+    				<a href='index.php?controlador=socio/show&id=<?= $socio->id?>' 
     				class=button>Ver</a>
-    				<a href='index.php?controlador=libro/edit&id=<?= $libro->id?>' 
+    				<a href='index.php?controlador=socio/edit&id=<?= $socio->id?>' 
     				class=button>Editar</a>
-    				<a href='index.php?controlador=libro/delete&id=<?= $libro->id?>' 
+    				<a href='index.php?controlador=socio/delete&id=<?= $socio->id?>' 
     				class=button>Borrar</a>
     			</td>
     		</tr>

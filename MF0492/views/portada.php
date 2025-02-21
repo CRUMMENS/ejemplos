@@ -13,14 +13,16 @@
 	
 		<h1>Portada de la biblioteca</h1>
 		
-		<menu>
+		<menu class="menu">
 			<li><a href = "index.php" class="activo">Inicio</a>
 			<li><a href = "index.php?controlador=libro/list">Lista de libros</a></li>
 			<li><a href = "index.php?controlador=libro/create">Nuevo libro</a></li>
+			<li><a href = "index.php?controlador=socio/list">Lista de socios</a></li>
+			<li><a href = "index.php?controlador=socio/create">Nuevo socio</a></li>
 		</menu>
 		
 		<h2>Bienvenido</h2>
-		<p>- Esta es la portada del primer ejemplo de gestión de libros de biblioteca</p>
+		<p>- Esta es la portada de gestión de libros y socios de la base de datos "biblioteca"</p>
 		
 		<p>- Este ejemplo es un <b>MVC sencillo</b>, todas las peticiones pasarán  
 		por el <b>index.php</b> , que actuará de dispatcher y gestionará todos 

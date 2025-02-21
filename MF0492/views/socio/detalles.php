@@ -11,18 +11,15 @@
 	
 	<body>
 	
-		<h2>Detalles del libro</h2>
-		<h3> <?= $libro->titulo ?></h3>
+		<h2>Detalles del socio</h2>
+		<h3> <b><?= $socio->nombre?></b> <b><?= $socio->apellidos?></b></h3>
 		
-		<p><b>ISBN:</b>             <?= $libro->isbn?> </p>
-		<p><b>Titulo</b>			<?= $libro->titulo?> </p>
-		<p><b>Editorial</b>			<?= $libro->editorial?> </p>
-		<p><b>Autor</b>				<?= $libro->autor?> </p>
-		<p><b>Idioma</b>			<?= $libro->idioma?> </p>
-		<p><b>Edicion</b>			<?= $libro->edicion?> </p>
-		<p><b>Edad Recomendada</b>	
-		<?= $libro->edadrecomendada ? $libro->edadrecomendada  : 'TP' ?> </p>
-		
+		<p><b>Id:</b>           <?= $socio->id?> </p>
+		<p><b>Teléfono:</b>		<?= $socio->telefono?> </p>
+		<p><b>Email:</b>		<?= $socio->email?> </p>
+		<p><b>Población:</b>	<?= $socio->poblacion?> </p>
+
+			
 		<div class="centrado">
 			<a class="button" href="index.php?controlador=libro/list">Lista de libros</a>
 		</div>

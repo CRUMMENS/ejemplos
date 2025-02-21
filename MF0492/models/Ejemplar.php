@@ -28,4 +28,5 @@ class Ejemplar extends Model {
         $consulta = "SELECT * FROM libros WHERE id=$this->idlibro";
         return DBMysqli::select($consulta, 'Libro');
     }
+    
 }

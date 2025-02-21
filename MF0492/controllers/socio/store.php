@@ -6,18 +6,16 @@ if (empty($_POST['guardar'])){
 }
 
 //crea un nuevo socio y toma sus valores del POST
-$libro = new Libro();
+$socio = new Socio();
 
-$socio->dni               =$_POST['dni'];
 $socio->nombre            =$_POST['nombre'];
 $socio->apellidos         =$_POST['apellidos'];
-$socio->nacimiento        =$_POST['nacimiento '];
 $socio->telefono          =intval ($_POST['telefono']);
-$socio->email             =$_POST['edicion'];
-$socio->poblacion         =$_POST['edadrecomendada'];
+$socio->email             =$_POST['email'];
+$socio->poblacion         =$_POST['poblacion'];
 
-$libro->save(); //guarda el socio
+$socio->save(); //guarda el socio
 
 //prepara el mensaje 
 $mensaje = "Guardado del socio $socio->nombre $socio->apellidos correcto";
-require '../views/exito.php';
+require '../views/exitoSocio.php';

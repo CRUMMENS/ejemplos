@@ -6,20 +6,18 @@ if (empty($_POST['actualizar'])){
 }
 
 //recupera el socio a partir del ID (por POST)
-$libro = Socio::findOrFail(intval($_POST['id']) , 'No se encontró el socio');
+$socio = Socio::findOrFail(intval($_POST['id']) , 'No se encontró el socio');
 
 //actualiza los campos de socio con los datos del formulario
 
-$socio->dni               =$_POST['dni'];
 $socio->nombre            =$_POST['nombre'];
 $socio->apellidos         =$_POST['apellidos'];
-$socio->nacimiento        =$_POST['nacimiento '];
 $socio->telefono          =intval ($_POST['telefono']);
-$socio->email             =$_POST['edicion'];
-$socio->poblacion         =$_POST['edadrecomendada'];
+$socio->email             =$_POST['email'];
+$socio->poblacion         =$_POST['poblacion'];
 
 $socio->update(); //actualiza en la BDD
 
 //prepara el mensaje y carga la vista de éxito
 $mensaje = "Actualización del socio $socio->nombre $socio->apellidos  correcto";
-require '../views/exito.php';
+require '../views/exitoSocio.php';

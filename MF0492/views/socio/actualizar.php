@@ -24,34 +24,20 @@
         		<input type="text" name="apellidos" value="<?=$socio->apellidos?>">
         		<br>
         		
-        		<label>Editorial</label>
-        		<input type="text" name="editorial" value="<?=$libro->editorial?>">
+        		<label>DNI</label>
+        		<input type="text" name="dni" max="9" value="<?=$libro->dni?>">
+        		<br>
+
+        		<label>Teléfono</label>
+        		<input type ="number" name="telefono"  value="<?= $libro->telefono?>">
         		<br>
         		
-        		<label>Autor</label>
-        		<input type="text" name="autor" value="<?=$libro->autor?>">
+        		<label>Email</label>
+        		<input type="email" name="email" value="<?=$libro->email?>">
         		<br>
         		
-        		<label>Idioma</label>
-        		<select name="idioma">
-        			<option value="Castellano" <?=$libro->idioma=='Castellano' ? 'selected' : '' ?>>
-        			Castellano</option>
-        			
-        			<option value="Catalán" <?=$libro->idioma=='Catalan' ? 'selected' : '' ?>>
-        			Catalán</option>
-        			
-        			<option value="Otros" <?=$libro->idioma=='Otros' ? 'selected' : '' ?>>
-        			Otros</option>
-        		</select>
-        		<br>
-        		
-        		<label>Edición</label>
-        		<input type ="number" min="0" name="edicion"  value="<?= $libro->edicion?>">
-        		<br>
-        		
-        		<label>Edad</label>
-        		<input type="number" min="0" max="99" name="edadrecomendada"
-        			   value="<?=$libro->edadrecomendada?>">
+        		<label>Población</label>
+        		<input type="text" name="poblacion" value="<?=$libro->poblacion?>">
         		<br>
         		
         		<input type="submit" class="button" name="actualizar" value="Actualizar">
